@@ -8,7 +8,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "apps",
+		"source" : "apps"
 	}
 }

@@ -39,13 +39,83 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/wys/CLionProjects/primaryINS/cmake-build-debug/
+cmake_ninja_workdir = /home/wys/primaryINS/cmake-build-debug/
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target primaryINS
+
+
+#############################################
+# Order-only phony target for primaryINS
+
+build cmake_object_order_depends_target_primaryINS: phony || CMakeFiles/primaryINS.dir
+
+build CMakeFiles/primaryINS.dir/lib/files/IMUReader.cpp.o: CXX_COMPILER__primaryINS_Debug /home/wys/primaryINS/lib/files/IMUReader.cpp || cmake_object_order_depends_target_primaryINS
+  DEFINES = -DprimaryINS_EXPORTS
+  DEP_FILE = CMakeFiles/primaryINS.dir/lib/files/IMUReader.cpp.o.d
+  FLAGS = -g -fPIC -std=gnu++14
+  INCLUDES = -I/home/wys/primaryINS/lib/files
+  OBJECT_DIR = CMakeFiles/primaryINS.dir
+  OBJECT_FILE_DIR = CMakeFiles/primaryINS.dir/lib/files
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target primaryINS
+
+
+#############################################
+# Link the shared library libprimaryINS.so
+
+build libprimaryINS.so: CXX_SHARED_LIBRARY_LINKER__primaryINS_Debug CMakeFiles/primaryINS.dir/lib/files/IMUReader.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/primaryINS.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libprimaryINS.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = libprimaryINS.so
+  TARGET_PDB = primaryINS.so.dbg
+
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/wys/CLionProjects/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wys/CLionProjects/primaryINS -B/home/wys/CLionProjects/primaryINS/cmake-build-debug
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wys/primaryINS -B/home/wys/primaryINS/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -54,51 +124,411 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 
 #############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/wys/primaryINS/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build apps/CMakeFiles/install/strip.util: CUSTOM_COMMAND apps/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build apps/install/strip: phony apps/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build apps/CMakeFiles/install/local.util: CUSTOM_COMMAND apps/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build apps/install/local: phony apps/CMakeFiles/install/local.util
+
+
+#############################################
 # Utility command for edit_cache
 
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/wys/CLionProjects/primaryINS/cmake-build-debug && /snap/clion/178/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+build apps/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps && /snap/clion/178/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build edit_cache: phony CMakeFiles/edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target primaryINS
+build apps/edit_cache: phony apps/CMakeFiles/edit_cache.util
 
 
 #############################################
-# Order-only phony target for primaryINS
+# Utility command for rebuild_cache
 
-build cmake_object_order_depends_target_primaryINS: phony || CMakeFiles/primaryINS.dir
+build apps/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps && /snap/clion/178/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wys/primaryINS -B/home/wys/primaryINS/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
 
-build CMakeFiles/primaryINS.dir/main.cpp.o: CXX_COMPILER__primaryINS_Debug /home/wys/CLionProjects/primaryINS/main.cpp || cmake_object_order_depends_target_primaryINS
-  DEP_FILE = CMakeFiles/primaryINS.dir/main.cpp.o.d
+build apps/rebuild_cache: phony apps/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build apps/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build apps/CMakeFiles/install.util: CUSTOM_COMMAND apps/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps && /snap/clion/178/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build apps/install: phony apps/CMakeFiles/install.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/wys/primaryINS/apps/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build apps/calibration/CMakeFiles/install/strip.util: CUSTOM_COMMAND apps/calibration/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/calibration && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build apps/calibration/install/strip: phony apps/calibration/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build apps/calibration/CMakeFiles/install/local.util: CUSTOM_COMMAND apps/calibration/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/calibration && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build apps/calibration/install/local: phony apps/calibration/CMakeFiles/install/local.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target calibration
+
+
+#############################################
+# Order-only phony target for calibration
+
+build cmake_object_order_depends_target_calibration: phony || cmake_object_order_depends_target_primaryINS
+
+build apps/calibration/CMakeFiles/calibration.dir/calibration.cpp.o: CXX_COMPILER__calibration_Debug /home/wys/primaryINS/apps/calibration/calibration.cpp || cmake_object_order_depends_target_calibration
+  DEP_FILE = apps/calibration/CMakeFiles/calibration.dir/calibration.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/primaryINS.dir
-  OBJECT_FILE_DIR = CMakeFiles/primaryINS.dir
-  TARGET_COMPILE_PDB = CMakeFiles/primaryINS.dir/
-  TARGET_PDB = primaryINS.pdb
+  INCLUDES = -I/home/wys/primaryINS/lib/files
+  OBJECT_DIR = apps/calibration/CMakeFiles/calibration.dir
+  OBJECT_FILE_DIR = apps/calibration/CMakeFiles/calibration.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target primaryINS
+# Link build statements for EXECUTABLE target calibration
 
 
 #############################################
-# Link the executable primaryINS
+# Link the executable apps/calibration/calibration
 
-build primaryINS: CXX_EXECUTABLE_LINKER__primaryINS_Debug CMakeFiles/primaryINS.dir/main.cpp.o
+build apps/calibration/calibration: CXX_EXECUTABLE_LINKER__calibration_Debug apps/calibration/CMakeFiles/calibration.dir/calibration.cpp.o | libprimaryINS.so || libprimaryINS.so
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/primaryINS.dir
+  LINK_LIBRARIES = -Wl,-rpath,/home/wys/primaryINS/cmake-build-debug:  libprimaryINS.so
+  OBJECT_DIR = apps/calibration/CMakeFiles/calibration.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/primaryINS.dir/
-  TARGET_FILE = primaryINS
-  TARGET_PDB = primaryINS.pdb
+  TARGET_FILE = apps/calibration/calibration
+  TARGET_PDB = calibration.dbg
+
+
+#############################################
+# Utility command for install
+
+build apps/calibration/CMakeFiles/install.util: CUSTOM_COMMAND apps/calibration/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/calibration && /snap/clion/178/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build apps/calibration/install: phony apps/calibration/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build apps/calibration/list_install_components: phony
+
+
+#############################################
+# Utility command for edit_cache
+
+build apps/calibration/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/calibration && /snap/clion/178/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build apps/calibration/edit_cache: phony apps/calibration/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build apps/calibration/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/calibration && /snap/clion/178/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wys/primaryINS -B/home/wys/primaryINS/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build apps/calibration/rebuild_cache: phony apps/calibration/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/wys/primaryINS/apps/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build apps/initialization/CMakeFiles/install/strip.util: CUSTOM_COMMAND apps/initialization/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/initialization && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build apps/initialization/install/strip: phony apps/initialization/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build apps/initialization/CMakeFiles/install/local.util: CUSTOM_COMMAND apps/initialization/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/initialization && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build apps/initialization/install/local: phony apps/initialization/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build apps/initialization/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/initialization && /snap/clion/178/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build apps/initialization/edit_cache: phony apps/initialization/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target initialization
+
+
+#############################################
+# Order-only phony target for initialization
+
+build cmake_object_order_depends_target_initialization: phony || cmake_object_order_depends_target_primaryINS
+
+build apps/initialization/CMakeFiles/initialization.dir/initialization.cpp.o: CXX_COMPILER__initialization_Debug /home/wys/primaryINS/apps/initialization/initialization.cpp || cmake_object_order_depends_target_initialization
+  DEP_FILE = apps/initialization/CMakeFiles/initialization.dir/initialization.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I/home/wys/primaryINS/lib/files
+  OBJECT_DIR = apps/initialization/CMakeFiles/initialization.dir
+  OBJECT_FILE_DIR = apps/initialization/CMakeFiles/initialization.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target initialization
+
+
+#############################################
+# Link the executable apps/initialization/initialization
+
+build apps/initialization/initialization: CXX_EXECUTABLE_LINKER__initialization_Debug apps/initialization/CMakeFiles/initialization.dir/initialization.cpp.o | libprimaryINS.so || libprimaryINS.so
+  FLAGS = -g
+  LINK_LIBRARIES = -Wl,-rpath,/home/wys/primaryINS/cmake-build-debug:  libprimaryINS.so
+  OBJECT_DIR = apps/initialization/CMakeFiles/initialization.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = apps/initialization/initialization
+  TARGET_PDB = initialization.dbg
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build apps/initialization/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/initialization && /snap/clion/178/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wys/primaryINS -B/home/wys/primaryINS/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build apps/initialization/rebuild_cache: phony apps/initialization/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for install
+
+build apps/initialization/CMakeFiles/install.util: CUSTOM_COMMAND apps/initialization/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/initialization && /snap/clion/178/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build apps/initialization/install: phony apps/initialization/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build apps/initialization/list_install_components: phony
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/wys/primaryINS/apps/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build apps/Mechanization/CMakeFiles/install/strip.util: CUSTOM_COMMAND apps/Mechanization/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/Mechanization && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build apps/Mechanization/install/strip: phony apps/Mechanization/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build apps/Mechanization/CMakeFiles/install/local.util: CUSTOM_COMMAND apps/Mechanization/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/Mechanization && /snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build apps/Mechanization/install/local: phony apps/Mechanization/CMakeFiles/install/local.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target mechanization
+
+
+#############################################
+# Order-only phony target for mechanization
+
+build cmake_object_order_depends_target_mechanization: phony || cmake_object_order_depends_target_primaryINS
+
+build apps/Mechanization/CMakeFiles/mechanization.dir/mechanization.cpp.o: CXX_COMPILER__mechanization_Debug /home/wys/primaryINS/apps/Mechanization/mechanization.cpp || cmake_object_order_depends_target_mechanization
+  DEP_FILE = apps/Mechanization/CMakeFiles/mechanization.dir/mechanization.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -I/home/wys/primaryINS/lib/files
+  OBJECT_DIR = apps/Mechanization/CMakeFiles/mechanization.dir
+  OBJECT_FILE_DIR = apps/Mechanization/CMakeFiles/mechanization.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target mechanization
+
+
+#############################################
+# Link the executable apps/Mechanization/mechanization
+
+build apps/Mechanization/mechanization: CXX_EXECUTABLE_LINKER__mechanization_Debug apps/Mechanization/CMakeFiles/mechanization.dir/mechanization.cpp.o | libprimaryINS.so || libprimaryINS.so
+  FLAGS = -g
+  LINK_LIBRARIES = -Wl,-rpath,/home/wys/primaryINS/cmake-build-debug:  libprimaryINS.so
+  OBJECT_DIR = apps/Mechanization/CMakeFiles/mechanization.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = apps/Mechanization/mechanization
+  TARGET_PDB = mechanization.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build apps/Mechanization/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/Mechanization && /snap/clion/178/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build apps/Mechanization/edit_cache: phony apps/Mechanization/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build apps/Mechanization/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/Mechanization && /snap/clion/178/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wys/primaryINS -B/home/wys/primaryINS/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build apps/Mechanization/rebuild_cache: phony apps/Mechanization/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for install
+
+build apps/Mechanization/CMakeFiles/install.util: CUSTOM_COMMAND apps/Mechanization/all
+  COMMAND = cd /home/wys/primaryINS/cmake-build-debug/apps/Mechanization && /snap/clion/178/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build apps/Mechanization/install: phony apps/Mechanization/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build apps/Mechanization/list_install_components: phony
 
 # =============================================================================
 # Target aliases.
+
+build calibration: phony apps/calibration/calibration
+
+build initialization: phony apps/initialization/initialization
+
+build mechanization: phony apps/Mechanization/mechanization
+
+build primaryINS: phony libprimaryINS.so
 
 # =============================================================================
 # Folder targets.
@@ -106,9 +536,37 @@ build primaryINS: CXX_EXECUTABLE_LINKER__primaryINS_Debug CMakeFiles/primaryINS.
 # =============================================================================
 
 #############################################
-# Folder: /home/wys/CLionProjects/primaryINS/cmake-build-debug
+# Folder: /home/wys/primaryINS/cmake-build-debug
 
-build all: phony primaryINS
+build all: phony libprimaryINS.so apps/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/wys/primaryINS/cmake-build-debug/apps
+
+build apps/all: phony apps/calibration/all apps/initialization/all apps/Mechanization/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/wys/primaryINS/cmake-build-debug/apps/Mechanization
+
+build apps/Mechanization/all: phony apps/Mechanization/mechanization
+
+# =============================================================================
+
+#############################################
+# Folder: /home/wys/primaryINS/cmake-build-debug/apps/calibration
+
+build apps/calibration/all: phony apps/calibration/calibration
+
+# =============================================================================
+
+#############################################
+# Folder: /home/wys/primaryINS/cmake-build-debug/apps/initialization
+
+build apps/initialization/all: phony apps/initialization/initialization
 
 # =============================================================================
 # Built-in targets
@@ -117,14 +575,14 @@ build all: phony primaryINS
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../apps/CMakeLists.txt ../apps/Mechanization/CMakeLists.txt ../apps/calibration/CMakeLists.txt ../apps/initialization/CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../apps/CMakeLists.txt ../apps/Mechanization/CMakeLists.txt ../apps/calibration/CMakeLists.txt ../apps/initialization/CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/wys/CLionProjects/primaryINS/cmake-build-debug"
+			"value" : "/home/wys/primaryINS/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -579,7 +579,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/wys/CLionProjects/primaryINS"
+			"value" : "/home/wys/primaryINS"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -739,7 +739,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "5"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/wys/CLionProjects/primaryINS/cmake-build-debug"
+			"value" : "/home/wys/primaryINS/cmake-build-debug"
 		},
 		{
 			"name" : "primaryINS_IS_TOP_LEVEL",
@@ -1135,7 +1135,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/wys/CLionProjects/primaryINS"
+			"value" : "/home/wys/primaryINS"
 		}
 	],
 	"kind" : "cache",

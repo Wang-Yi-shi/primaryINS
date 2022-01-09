@@ -1,0 +1,159 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-7dbeda54accddda97062.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "apps",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps-Debug-76fddd1453400e648719.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "apps"
+				},
+				{
+					"build" : "apps/calibration",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.calibration-Debug-f002219f86e98207bf8e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.3"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "apps/calibration",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "apps/initialization",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.initialization-Debug-e6f0af7177108ad1703f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.3"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "apps/initialization",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "apps/Mechanization",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.Mechanization-Debug-75114dce1ec68e03506f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.3"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "apps/Mechanization",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "primaryINS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "calibration::@fc0840d765bf06659dd0",
+					"jsonFile" : "target-calibration-Debug-a9d284750536b930e554.json",
+					"name" : "calibration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "initialization::@fe5d0c291ca9412c74b2",
+					"jsonFile" : "target-initialization-Debug-db4a588d5165c5afa16b.json",
+					"name" : "initialization",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "mechanization::@4ef96634f809b50ab416",
+					"jsonFile" : "target-mechanization-Debug-a7b283a5f7b12eefdb05.json",
+					"name" : "mechanization",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "primaryINS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-primaryINS-Debug-812169ce50251aaf3e4f.json",
+					"name" : "primaryINS",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wys/primaryINS/cmake-build-debug",
+		"source" : "/home/wys/primaryINS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "primaryINS"
+			"path" : "libprimaryINS.so"
 		}
 	],
 	"backtrace" : 1,
@@ -10,7 +10,9 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_library",
+			"install",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -24,7 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 30,
 				"parent" : 0
 			}
 		]
@@ -35,10 +49,23 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -fPIC"
 				},
 				{
 					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "primaryINS_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/wys/primaryINS/lib/files"
 				}
 			],
 			"language" : "CXX",
@@ -57,14 +84,28 @@
 		}
 	],
 	"id" : "primaryINS::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			},
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
 	"link" : 
 	{
 		"commandFragments" : 
 		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -73,7 +114,7 @@
 		"language" : "CXX"
 	},
 	"name" : "primaryINS",
-	"nameOnDisk" : "primaryINS",
+	"nameOnDisk" : "libprimaryINS.so",
 	"paths" : 
 	{
 		"build" : ".",
@@ -94,9 +135,9 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "lib/files/IMUReader.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "SHARED_LIBRARY"
 }
