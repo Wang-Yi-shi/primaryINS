@@ -7,7 +7,7 @@ fi
 
 dir_data=./data
 
-imu_file=${dir_data}/testData.txt
+imu_file=${dir_data}/Calibration_Data.txt
 
 echo $imu_file
 

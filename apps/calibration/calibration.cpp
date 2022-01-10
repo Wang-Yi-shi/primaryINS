@@ -11,10 +11,11 @@
 #include <iostream>
 #include <unistd.h>
 #include <getopt.h>
+#include <iomanip>
 
 #include "IMUReader.hpp"
 
-#define debug 0
+#define debug 1
 
 using namespace std;
 using namespace primaryINS;
@@ -31,6 +32,21 @@ int main(int argc, char *argv[])
             {0,0,0,0},
     };
 
+    string helpInfo="Usage:\n"
+                    " \n"
+                    "required options:\n"
+                    "    --input  <input_imu_file_path>   input imu file\n"
+                    "optional options:\n"
+                    "    --output <output_imu_file_name>  output imu file\n"
+                    "    --help                           Prints this help\n"
+                    " \n"
+                    "Examples:\n"
+                    "calibration --file ./test.txt --output ./result.txt \n"
+                    " \n"
+                    "Author:\n"
+                    "   written by  wang yishi, 2022\n"
+                    "   email: 1297366455@qq.com ";
+
     string inputImuFile;
     string outputImuFile;
 
@@ -40,30 +56,18 @@ int main(int argc, char *argv[])
         {
             ///Usage information
             case 'h':
-                printf("Usage:\n");
-                printf(" \n");
-                printf("    required options:\n");
-                printf("    --input <input_imu_file_path>  input imu file\n");
-                printf("    optional options:\n");
-                printf("    --output <output_imu_file_name>  output imu file\n");
-                printf("    --help                             Prints this help\n");
-                printf(" \n");
-                printf("Examples:\n");
-                printf("    calibration --input ./data/imu.txt\n");
-                printf(" \n");
-                printf("Author:\n");
-                printf("    written by Wang-Yi-shi, 2022\n");
+                cout<<helpInfo<<endl;
                 break;
             case 'i':
-                printf("The file path is: %s\n",optarg);
+                cout<<"The file path is: "<<optarg<<endl;
                 inputImuFile = optarg;
                 break;
             case 'o':
-                printf("The output file path is :%s\n",optarg);
+                cout<<"The output file path is :"<<optarg<<endl;
                 outputImuFile = optarg;
                 break;
             default:
-                printf("Invalid argument!\n");
+                cout<<"Invalid argument!"<<endl;
                 return -1;
         }
     }
@@ -76,19 +80,22 @@ int main(int argc, char *argv[])
 
     ///now, start read imu data
     IMUReader imuReader(inputImuFile);
-    imuReader.readFile();
 
     IMUDataMap imuData;
-    imuData = imuReader.imuData;
+    imuData = imuReader.readFile();
 
-    cout<<"-------------------"<<endl;
+    cout<<"--------start process--------"<<endl;
 
     ///test whether the read function is succeed
     if(debug)
     {
         for(auto it = imuData.begin();it!=imuData.end();++it)
         {
-            cout<<(*it).first<<" "<<(*it).second.gyro_x<<" "
+            cout<< setiosflags(ios::fixed);
+            cout<< setprecision(4)
+                <<(*it).first<<" "
+                << setprecision(6)
+                <<(*it).second.gyro_x<<" "
                 <<(*it).second.gyro_y<<" "<<(*it).second.gyro_z<<" "
                 <<(*it).second.acc_x<<" "<<(*it).second.acc_y<<" "
                 <<" "<<(*it).second.acc_z<<endl;
@@ -96,13 +103,16 @@ int main(int argc, char *argv[])
     }
 
     fstream outFileStream(outputImuFile.c_str(),ios::out);
-
-    double result;
-
+    
     for(auto it=imuData.begin();it!=imuData.end();++it)
     {
-        result = (*it).second.gyro_x+(*it).second.gyro_y+(*it).second.gyro_z;
-        outFileStream<<(*it).first<<" "<<result<<endl;
+        outFileStream<< setiosflags(ios::fixed);
+        outFileStream<< setprecision(4)
+                     <<(*it).first<<" "
+                     << setprecision(6)
+                     <<(*it).second.gyro_x<<" "
+                     <<(*it).second.gyro_y<<" "
+                     <<(*it).second.gyro_z<<endl;
     }
 
 

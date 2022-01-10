@@ -6,6 +6,7 @@
 #include<vector>
 #include<map>
 #include<sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -35,8 +36,9 @@ namespace primaryINS
         void setFilePath(string _filePath);
         void getFilePath(string _filePath);
 
-        void readFile();
-        IMUDataMap imuData;
+        IMUDataMap readFile();
+
+
 
     private:
         string filePath;

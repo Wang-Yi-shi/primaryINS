@@ -26,17 +26,18 @@ namespace primaryINS
         }
     }
 
-    void IMUReader::readFile()
+    IMUDataMap IMUReader::readFile()
     {
+        IMUDataMap imuData;
         if(this->filePath.size()==0)
         {
             cout<<"Sorry, you should set filePath first!"<<endl;
-            return;
+            exit(0);
         }
         else
         {
             fstream inFileStrm(filePath.c_str(),ios::in);
-            while(!inFileStrm.eof())
+            while(inFileStrm.peek()!=EOF)
             {
                 string str="";
                 getline(inFileStrm,str);
@@ -48,13 +49,13 @@ namespace primaryINS
                 ss>>timeStamp>>data.gyro_x>>data.gyro_y>>data.gyro_z
                   >>data.acc_x>>data.acc_y>>data.acc_z;
 
-                this->imuData.insert(pair<double, IMUData> (timeStamp,data));
+                imuData.insert(pair<double, IMUData> (timeStamp,data));
             }
 
             ///test whether the read function is succeed
             if(debug)
             {
-                for(auto it = this->imuData.begin();it!=this->imuData.end();++it)
+                for(auto it = imuData.begin();it!=imuData.end();++it)
                 {
                     cout<<(*it).first<<" "<<(*it).second.gyro_x<<" "
                         <<(*it).second.gyro_y<<" "<<(*it).second.gyro_z<<" "
@@ -62,8 +63,8 @@ namespace primaryINS
                         <<" "<<(*it).second.acc_z<<endl;
                 }
             }
-
             inFileStrm.close();
+            return imuData;
         }
     }
 }
